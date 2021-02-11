@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+   </head>
+   <body>
+      <script>
+          /* To create a rock, paper, scissors game (human vs pc):
+             
+             1.Get computer input (name:computerPlay)
+                1a.Get a random number
+                1b.Asign number to a possible game choice
+                1c.Get and store the final output
+             
+             2.Get human input (name: playerSelection)
+                2a.Get human player input (prompt)
+                2b.Make that choice case insensitive
+                2c.Store the final output
+                2d.Error message if input is not a valid option
+             
+             3.Comparison and winner output (name:game)
+                3a.Get stored inputs from both players
+                3b.Compare them in base of game rules
+                3c.Log the results with a message                
+             
+             4.Call the code to play 5 times
+          */
+
+
+        // Step 1
+            //1a
+            let getRandomNumber = () => {
+                return Math.floor((Math.random()*3)+1);
+                }
+            //1b
+            let getComputerChoice = a => {
+                a = getRandomNumber();
+                   if( a == 1 ){
+                    return "rock"
+                   } else if ( a == 2 ){
+                    return "paper"
+                   } else {
+                    return "scissors"
+                   }
+                } 
+            //1c
+            let computerPlay = getComputerChoice(); 
+        
+        // Step 2
+            //2a
+            let playerChoice = prompt("Make your choice: \n \nRock, Paper or Scissors?");
+            //2b
+            let playerChoiceLower = playerChoice.toLowerCase();
+            //2c
+            let playerSelection = playerChoiceLower;
+            //2d
+            let errorMessage = b => {
+                b = playerSelection;
+                   if ( b === "rock" || b ==="paper" || b ==="scissors"){
+                    alert("Good choice! \n\n Now lets see!")
+                   }else{
+                    alert("That's not part of the game!");
+                   }
+                }
+            
+         
+//tryout
+console.log();
+      </script>
+   </body>
+</html>
