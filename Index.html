@@ -14,19 +14,20 @@
              
              2.Get human input (name: playerSelection)
                 2a.Get human player input (prompt)
-                2b.Make that choice case insensitive
-                2c.Store the final output
-                2d.Error message if input is not a valid option
+                2b.Error message if input is not a valid option
+                2c.Make that choice case insensitive  
+                2d.Get valid Input
+                2e.Store the final output
+                
              
              3.Comparison and winner output (name:game)
-                3a.Get stored inputs from both players
-                3b.Compare them in base of game rules
-                3c.Log the results with a message                
+                3a.Compare stored inputs from both players in base of game rules
+                3b.Log the results with a message                
              
              4.Call the code to play 5 times
           */
 
-
+      let playRound = () => {
         // Step 1
             //1a
             let getRandomNumber = () => {
@@ -50,22 +51,60 @@
             //2a
             let playerChoice = prompt("Make your choice: \n \nRock, Paper or Scissors?");
             //2b
-            let playerChoiceLower = playerChoice.toLowerCase();
-            //2c
-            let playerSelection = playerChoiceLower;
-            //2d
-            let errorMessage = b => {
-                b = playerSelection;
-                   if ( b === "rock" || b ==="paper" || b ==="scissors"){
-                    alert("Good choice! \n\n Now lets see!")
-                   }else{
-                    alert("That's not part of the game!");
+            if ( playerChoice === null || playerChoice === ''){
+                    alert("Oops! \n\n That's not a valid option. Refresh and try again!")
+                   } 
+            //2c       
+            else{
+                    playerChoiceLower = playerChoice.toLowerCase();
                    }
-                }
+               
+            //2d 
+            if (playerChoiceLower === "rock" || playerChoiceLower === "paper" || playerChoiceLower === "scissors"){
+               alert("Good choice now lets see how it goes!");
+               }    
+            else{
+               alert("Oops! \n\nThat's not a valid option. Remember it must be:\nRock, Paper or Scissors.\n\nRefresh and try again.");
+               }
+            //2e
+            let playerSelection = playerChoiceLower;     
             
+         //Step 3
+            let theGame = (b,c) => {
+
+               b=computerPlay;
+               c=playerSelection;
+            
+            if ( b === "rock" && c === "scissors"){
+               alert (`Computer\'s choice is ${b} and yours was ${c}. Computer won!`)
+               }
+            else if ( b === "rock" && c === "paper"){
+               alert (`Computer\'s choice is ${b} and yours was ${c}. You won!`)
+               }
+            else if ( b === "paper" && c === "scissors"){
+               alert (`Computer\'s choice is ${b} and yours was ${c}. You won!`)
+               } 
+            else if ( b === "paper" && c === "rock"){
+               alert (`Computer\'s choice is ${b} and yours was ${c}. Computer won!`)
+               }  
+            else if ( b === "scissors" && c === "rock"){
+               alert (`Computer\'s choice is ${b} and yours was ${c}. You won!`)
+               }  
+            else if ( b === "scissors" && c === "paper"){
+               alert (`Computer\'s choice is ${b} and yours was ${c}. Computer won!`)
+               }           
+            else {
+               alert (`Computer\'s choice is ${b} and yours was ${c}. It\'s a draw!`)
+               }
+            }
+            theGame();
+         //Step 4
+      }     
+      playRound();
+      
+        
          
-//tryout
-console.log();
+
       </script>
    </body>
 </html>
