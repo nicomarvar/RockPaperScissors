@@ -1,0 +1,307 @@
+@font-face{
+    font-family: Pixeled;
+    src: url("Pixeled.ttf")
+}
+html{
+    font-family: Pixeled;
+    width: 100%;
+    height: 100%;
+}
+body{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(109, 156, 156);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow:  10px 10px  #646161;
+    background-color: rgb(255, 255, 255);
+    border-width: 5px;
+    border-style: solid;
+}
+.inputForm{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.alert{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.inputName{
+    display: flex;
+    flex-direction: column;
+    font-family: Pixeled;
+    font-size: 8px;
+    text-align: center;
+    margin-top: 15px;
+    width:80%;
+    border-color: rgb(169, 164, 170);
+    border-left-style: none;
+    border-right-style: none;
+    border-top-style: none;
+    height: 30px;
+}
+.inputButton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    border-style: none;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-family: Pixeled;
+    width: 40%;
+    height: 30%;
+}
+
+/*
+----------------avatars-----------------------------------------
+*/
+.containerTwo{
+    width: 70%;
+    height: 70%;
+    display: grid;
+    grid-template-columns: 49% 49%;
+    grid-column-gap:2% ;
+    grid-template-rows: 17% 40% 40%;
+    grid-row-gap: 2%;
+}
+.chooseAlert{
+    grid-area: 1/ 1/ 1/ 3;
+    width: 98%;
+    height: 60%;
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+    padding: 5px;
+    text-align: center;
+}
+.alien{
+    background-image: url(imgs/alien.png);
+    background-color:  rgba(159, 189, 142, 0.781);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: center;
+    background-position-y: center;
+    border-style: solid;
+    border-color:rgb(0, 0, 0);
+    border-width: 5px;
+    box-shadow:  -10px -10px  #646161;
+    width:90%;
+    margin: 5%;
+    height: auto;
+    padding:10px;
+    grid-area:2 /1 /2 /1;
+}
+.boy{
+    background-image: url(imgs/boy.png);
+    background-color:  rgba(159, 189, 142, 0.781);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: center;
+    background-position-y: center;
+    border-style: solid;
+    border-color:rgb(0, 0, 0);
+    border-width: 5px;
+    box-shadow:  10px -10px  #646161;
+    width:90%;
+    margin: 5%;
+    height: auto;
+    padding:10px;
+    grid-area:2 /2 /2 /2;
+}
+.smiley{
+    background-image: url(imgs/smiley.png);
+    background-color:  rgba(159, 189, 142, 0.781);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: center;
+    background-position-y: center;
+    border-style: solid;
+    border-color:rgb(0, 0, 0);
+    border-width: 5px;
+    box-shadow:  -10px 10px  #646161;
+    width:90%;
+    margin: 5%;
+    height: auto;
+    padding:10px;
+    grid-area:3 /1 /3 /2;
+}
+.illum{
+    background-image: url(imgs/illum.png);
+    background-color:  rgba(159, 189, 142, 0.781);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: center;
+    background-position-y: center;
+    border-style: solid;
+    border-color:rgb(0, 0, 0);
+    border-width: 5px;
+    box-shadow:  10px 10px  #646161;
+    width:90%;
+    margin: 5%;
+    height: auto;
+    padding:10px;
+    grid-area:3 /2 /3 /2;
+}
+.chosenAvatarImage{
+    background-color:  rgba(159, 189, 142, 0.781);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: center;
+    background-position-y: center;
+    border-style: solid;
+    border-color:rgb(0, 0, 0);
+    border-width: 5px;
+    box-shadow:  10px 10px  #646161;
+    width:90%;
+    margin: 5%;
+    height: 80%;
+    padding:10px;
+    grid-area:2 /1 /3 /2;
+}
+.toBattleScreen{
+    z-index: 0;
+    display: grid;
+    width:80%;
+    height: 80%;
+    background-color: white;
+    border-style: solid;
+    border-color:rgb(0, 0, 0);
+    border-width: 5px;
+    box-shadow:  10px 10px  #646161;
+    padding: 1%;
+    grid-template-columns: 49% 49%;
+    grid-template-rows: 49% 49%;
+    grid-gap:.5%;
+    z-index: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.alertTwo{
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+    position: absolute;
+    width: 66%;
+    height: 66%;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-style: solid;
+    border-color:rgb(0, 0, 0);
+    border-width: 5px;
+    box-shadow:  10px 10px  #646161;
+}
+.toBattleButton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    border-style: none;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-family: Pixeled;
+    width: 40%;
+    height: 30%;
+}
+.OneOne{
+    grid-area: 1/1/1/1;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+
+}
+.OneTwo{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    grid-area: 1/2/1/2;
+    background-image: url(/imgs/pc.png);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 85% 95%;
+    background-position: right center;
+    width: 100%;
+    height: 100%;
+
+}
+.TwoOne{
+    grid-area: 2/1/2/1;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+}
+.TwoTwo{
+    grid-area: 2/2/2/2;
+    background-color: burlywood;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+}
+.scoreBoard{
+    background-color:rgb(0, 0, 0);
+    color: rgb(236, 210, 58);
+    width: 80%;
+    height: 60%;
+    border-style: solid;
+    border-color:rgb(255, 255, 255);
+    border-width: 5px;
+    box-shadow:  10px 10px  #646161;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.weaponButtons{
+    border-style: solid;
+    border-color:rgb(255, 255, 255);
+    border-width: 5px;
+    box-shadow:  5px 5px  #646161;
+    background-color: black;
+    color: white;
+    border-style: none;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-family: Pixeled;
+    font-size: 70%;
+    margin: 2%;
+    width: 25%;
+    height: 20%;
+    
+}
+.TwoTwo p{
+    width: 100%;
+    color: yellow;
+}
