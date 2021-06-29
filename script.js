@@ -2,6 +2,185 @@ let body = document.querySelector("body");
 let containerDiv = document.querySelector("#container");
 containerDiv.classList.add("container");
 let playerName;
+let playerChoice;
+let playerScore = 0;
+let pcScore = 0;
+let playerAvatar;
+/*ACTUAL GAME--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+let theGame = (c) => {
+
+    let getRandomNumber = () => {
+        return Math.floor((Math.random() * 3) + 1);
+    }
+
+    let getComputerChoice = a => {
+        a = getRandomNumber();
+            if (a == 1) {
+                return "rock"
+            } else if (a == 2) {
+                return "paper"
+            } else {
+                return "scissors"
+            }
+    }
+    let computerPlay = getComputerChoice();
+    
+    b = computerPlay;
+
+    if (b === "rock" && c === "scissors") {
+    
+        let alertMessage = document.createElement("p");
+        alertMessage.classList.add("resultAlert");
+        alertMessage.innerText = "You choose "+ c + " and computer "+b+ "\nIt\'s a point for the evil PC!!!";
+        toBattleScreen.appendChild(alertMessage);
+
+        let remove = () =>{
+            toBattleScreen.removeChild(alertMessage);
+        }
+
+        let alertMessageButton = document.createElement("button");
+        alertMessageButton.classList.add("resultAlertButton");
+        alertMessageButton.addEventListener("click", remove, false);
+        alertMessageButton.innerText = "go!";
+        alertMessage.appendChild(alertMessageButton);
+
+        
+        pcScore += 1;
+        keepScore();
+        winner();
+    }
+    else if (b === "rock" && c === "paper") {
+    
+        let alertMessage = document.createElement("p");
+        alertMessage.classList.add("resultAlert");
+        alertMessage.innerText = "You choose "+ c + " and computer "+b+ "\nIt\'s a point for you!!!";
+        toBattleScreen.appendChild(alertMessage);
+
+        let remove = () =>{
+            toBattleScreen.removeChild(alertMessage);
+        }
+
+        let alertMessageButton = document.createElement("button");
+        alertMessageButton.classList.add("resultAlertButton");
+        alertMessageButton.addEventListener("click", remove, false);
+        alertMessageButton.innerText = "go!";
+        alertMessage.appendChild(alertMessageButton);
+
+        
+        playerScore += 1;
+        keepScore();
+        winner();
+    }
+    else if (b === "paper" && c === "scissors") {
+    
+        let alertMessage = document.createElement("p");
+        alertMessage.classList.add("resultAlert");
+        alertMessage.innerText = "You choose "+ c + " and computer "+b+ "\nIt\'s a point for you!!!";
+        toBattleScreen.appendChild(alertMessage);
+
+        let remove = () =>{
+            toBattleScreen.removeChild(alertMessage);
+        }
+
+        let alertMessageButton = document.createElement("button");
+        alertMessageButton.classList.add("resultAlertButton");
+        alertMessageButton.addEventListener("click", remove, false);
+        alertMessageButton.innerText = "go!";
+        alertMessage.appendChild(alertMessageButton);
+
+        
+        playerScore += 1;
+        keepScore();
+        winner();
+    }
+    else if (b === "paper" && c === "rock") {
+    
+        let alertMessage = document.createElement("p");
+        alertMessage.classList.add("resultAlert");
+        alertMessage.innerText = "You choose "+ c + " and computer "+b+ "\nIt\'s a point for the evil PC!!!";
+        toBattleScreen.appendChild(alertMessage);
+
+        let remove = () =>{
+            toBattleScreen.removeChild(alertMessage);
+        }
+
+        let alertMessageButton = document.createElement("button");
+        alertMessageButton.classList.add("resultAlertButton");
+        alertMessageButton.addEventListener("click", remove, false);
+        alertMessageButton.innerText = "go!";
+        alertMessage.appendChild(alertMessageButton);
+
+        
+        pcScore += 1;
+        keepScore();
+        winner();
+    }
+    else if (b === "scissors" && c === "rock") {
+    
+        let alertMessage = document.createElement("p");
+        alertMessage.classList.add("resultAlert");
+        alertMessage.innerText = "You choose "+ c + " and computer "+b+ "\nIt\'s a point for you!!!";
+        toBattleScreen.appendChild(alertMessage);
+
+        let remove = () =>{
+            toBattleScreen.removeChild(alertMessage);
+        }
+
+        let alertMessageButton = document.createElement("button");
+        alertMessageButton.classList.add("resultAlertButton");
+        alertMessageButton.addEventListener("click", remove, false);
+        alertMessageButton.innerText = "go!";
+        alertMessage.appendChild(alertMessageButton);
+
+        
+        playerScore += 1;
+        keepScore();
+        winner();
+    }
+    else if (b === "scissors" && c === "paper") {
+    
+        let alertMessage = document.createElement("p");
+        alertMessage.classList.add("resultAlert");
+        alertMessage.innerText = "You choose "+ c + " and computer "+b+ "\nIt\'s a point for the evil PC!!!";
+        toBattleScreen.appendChild(alertMessage);
+
+        let remove = () =>{
+            toBattleScreen.removeChild(alertMessage);
+        }
+
+        let alertMessageButton = document.createElement("button");
+        alertMessageButton.classList.add("resultAlertButton");
+        alertMessageButton.addEventListener("click", remove, false);
+        alertMessageButton.innerText = "go!";
+        alertMessage.appendChild(alertMessageButton);
+
+        pcScore += 1;
+        keepScore();
+        winner();
+    }
+    else {
+
+        let alertMessage = document.createElement("p");
+        alertMessage.classList.add("resultAlert");
+        alertMessage.innerText = "You choose "+ c + " and computer too! \nIt\'s a draw!!!";
+        toBattleScreen.appendChild(alertMessage);
+
+        let remove = () =>{
+            toBattleScreen.removeChild(alertMessage);
+        }
+
+        let alertMessageButton = document.createElement("button");
+        alertMessageButton.classList.add("resultAlertButton");
+        alertMessageButton.addEventListener("click", remove, false);
+        alertMessageButton.innerText = "go!";
+        alertMessage.appendChild(alertMessageButton);
+    }
+}
+
+
+
+
 
 /*
 
@@ -49,9 +228,9 @@ let getUserName = () => {
     playerName = document.getElementById("userInput").value;
     let output = document.getElementById("messageAlert");
 
-    if(playerName.length<3){
+    if (playerName.length < 3) {
         output.textContent = "Name must be longer";
-    }else{
+    } else {
         output.textContent = `Welcome ${playerName}!`;
         containerDiv.removeChild(alertMessage);
         containerDiv.removeChild(inputForm);
@@ -63,8 +242,8 @@ let getUserName = () => {
 let subButton = document.getElementById("subButton");
 let subKey = document.getElementById("inputForm");
 subButton.addEventListener("click", getUserName, false);
-subKey.addEventListener("keydown", function(e){
-    if(e.key==="Enter"){
+subKey.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
         getUserName();
         e.preventDefault();
     };
@@ -77,7 +256,7 @@ subKey.addEventListener("keydown", function(e){
 
 //----DIVS containing characters assigned to container----
 
-function displayCharacters(){
+function displayCharacters() {
 
     containerDiv.classList.remove("container");
     containerDiv.classList.add("containerTwo");
@@ -124,7 +303,7 @@ function displayCharacters(){
 }
 
 //----Call displayCharacters with continue button----
-continueButton.addEventListener("click", displayCharacters,false);
+continueButton.addEventListener("click", displayCharacters, false);
 
 //----To battle screen elements----
 //------------container-----------------------------
@@ -153,12 +332,49 @@ let scoreBoard = document.createElement("div");
 scoreBoard.setAttribute("id", "scoreBoard");
 scoreBoard.classList.add("scoreBoard");
 leftUpperCorner.appendChild(scoreBoard);
-/*function keepScore(a,b,c){
-    a=playerName;
-    b=playerScore;
-    c=pcScore;
-    scoreBoard.innerText = `${a}:       ${b}    \nEvil PC:       ${c}`;
-}*/
+function keepScore() {
+    a = playerName;
+    b = playerScore;
+    c = pcScore;
+    scoreBoard.innerText = a + ":       " + b + "\nEvil PC:       " + c;
+}
+
+function winner() {
+    if(playerScore>=5 && playerAvatar==="alien"){
+
+        let winnerScreen = document.createElement("div");
+        winnerScreen.setAttribute("id", "winner");
+        winnerScreen.classList.add("alienWinnerScreen");
+        body.appendChild(winnerScreen);
+
+    }else if(pcScore>=5){
+
+        let winnerScreen = document.createElement("div");
+        winnerScreen.setAttribute("id", "winner");
+        winnerScreen.classList.add("pcWinnerScreen");
+        body.appendChild(winnerScreen);
+
+    }else if(playerScore>=5 && playerAvatar==="boy"){
+
+        let winnerScreen = document.createElement("div");
+        winnerScreen.setAttribute("id", "winner");
+        winnerScreen.classList.add("boyWinnerScreen");
+        body.appendChild(winnerScreen);
+
+    }else if(playerScore>=5 && playerAvatar==="smiley"){
+
+        let winnerScreen = document.createElement("div");
+        winnerScreen.setAttribute("id", "winner");
+        winnerScreen.classList.add("smileyWinnerScreen");
+        body.appendChild(winnerScreen);
+    } else if(playerScore>=5 && playerAvatar==="illum"){
+
+            let winnerScreen = document.createElement("div");
+            winnerScreen.setAttribute("id", "winner");
+            winnerScreen.classList.add("illumWinnerScreen");
+            body.appendChild(winnerScreen);
+    }else{}
+}
 
 //-------right upper corner
 //------------container-----------------------------
@@ -182,8 +398,8 @@ rightLowerCorner.classList.add("TwoTwo");
 let makeYourChoiceText = document.createElement("p");
 rightLowerCorner.appendChild(makeYourChoiceText);
 
-function addText (){
-    makeYourChoiceText.textContent = playerName + ", choose your weapon :";
+function addText() {
+    makeYourChoiceText.innerText = playerName + ",\n choose your weapon :";
 }
 
 
@@ -193,6 +409,7 @@ function addText (){
 let rockButton = document.createElement("button")
 rockButton.setAttribute("type", "button");
 rockButton.setAttribute("id", "rockButton");
+rockButton.setAttribute("onclick", "theGame('rock')");
 rockButton.classList.add("weaponButtons");
 rockButton.innerText = "Rock";
 rightLowerCorner.appendChild(rockButton);
@@ -200,6 +417,7 @@ rightLowerCorner.appendChild(rockButton);
 let paperButton = document.createElement("button")
 paperButton.setAttribute("type", "button");
 paperButton.setAttribute("id", "paperButton");
+paperButton.setAttribute("onclick", "theGame('paper')");
 paperButton.classList.add("weaponButtons");
 paperButton.innerText = "Paper";
 rightLowerCorner.appendChild(paperButton);
@@ -207,18 +425,16 @@ rightLowerCorner.appendChild(paperButton);
 let scissorsButton = document.createElement("button")
 scissorsButton.setAttribute("type", "button");
 scissorsButton.setAttribute("id", "scissorsButton");
+scissorsButton.setAttribute("onclick", "theGame('scissors')");
 scissorsButton.classList.add("weaponButtons");
 scissorsButton.innerText = "Scissors";
 rightLowerCorner.appendChild(scissorsButton);
 
-
-
-
-function removeAlertTwo(){
+function removeAlertTwo() {
     body.removeChild(continueMessage);
 }
 
-function alienPlayer(){
+function alienPlayer() {
     body.removeChild(containerDiv);
     body.appendChild(toBattleScreen);
     body.appendChild(continueMessage);
@@ -230,9 +446,11 @@ function alienPlayer(){
     toBattleScreen.appendChild(leftUpperCorner);
     toBattleScreen.appendChild(rightLowerCorner);
     addText();
+    keepScore();
+    playerAvatar="alien";
 }
 
-function boyPlayer(){
+function boyPlayer() {
     body.removeChild(containerDiv);
     body.appendChild(toBattleScreen);
     body.appendChild(continueMessage);
@@ -244,9 +462,11 @@ function boyPlayer(){
     toBattleScreen.appendChild(leftUpperCorner);
     toBattleScreen.appendChild(rightLowerCorner);
     addText();
+    keepScore();
+    playerAvatar="boy";
 }
 
-function illumPlayer(){
+function illumPlayer() {
     body.removeChild(containerDiv);
     body.appendChild(toBattleScreen);
     body.appendChild(continueMessage);
@@ -258,9 +478,11 @@ function illumPlayer(){
     toBattleScreen.appendChild(leftUpperCorner);
     toBattleScreen.appendChild(rightLowerCorner);
     addText();
+    keepScore();
+    playerAvatar="illum";
 }
 
-function smileyPlayer(){
+function smileyPlayer() {
     body.removeChild(containerDiv);
     body.appendChild(toBattleScreen);
     body.appendChild(continueMessage);
@@ -272,5 +494,7 @@ function smileyPlayer(){
     toBattleScreen.appendChild(leftUpperCorner);
     toBattleScreen.appendChild(rightLowerCorner);
     addText();
+    keepScore();
+    playerAvatar="smiley";
 }
 
