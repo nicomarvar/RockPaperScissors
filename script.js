@@ -440,7 +440,7 @@ function alienPlayer() {
     body.appendChild(continueMessage);
     continueMessage.textContent = "Great Choice " + playerName + "!!";
     continueMessage.appendChild(toBattleButton);
-    leftLowerCorner.style.backgroundImage = "url(/imgs/alien_macro.png)";
+    leftLowerCorner.style.backgroundImage = "url(imgs/alien_macro.png)";
     toBattleScreen.appendChild(leftLowerCorner);
     toBattleScreen.appendChild(rightUpperCorner);
     toBattleScreen.appendChild(leftUpperCorner);
@@ -456,7 +456,7 @@ function boyPlayer() {
     body.appendChild(continueMessage);
     continueMessage.textContent = "Great Choice " + playerName + "!!";
     continueMessage.appendChild(toBattleButton);
-    leftLowerCorner.style.backgroundImage = "url(/imgs/boy_macro.png)";
+    leftLowerCorner.style.backgroundImage = "url(imgs/boy_macro.png)";
     toBattleScreen.appendChild(leftLowerCorner);
     toBattleScreen.appendChild(rightUpperCorner);
     toBattleScreen.appendChild(leftUpperCorner);
@@ -472,7 +472,7 @@ function illumPlayer() {
     body.appendChild(continueMessage);
     continueMessage.textContent = "Great Choice " + playerName + "!!";
     continueMessage.appendChild(toBattleButton);
-    leftLowerCorner.style.backgroundImage = "url(/imgs/illum_macro.png)";
+    leftLowerCorner.style.backgroundImage = "url(imgs/illum_macro.png)";
     toBattleScreen.appendChild(leftLowerCorner);
     toBattleScreen.appendChild(rightUpperCorner);
     toBattleScreen.appendChild(leftUpperCorner);
@@ -488,7 +488,7 @@ function smileyPlayer() {
     body.appendChild(continueMessage);
     continueMessage.textContent = "Great Choice " + playerName + "!!";
     continueMessage.appendChild(toBattleButton);
-    leftLowerCorner.style.backgroundImage = "url(/imgs/smiley_macro.png)";
+    leftLowerCorner.style.backgroundImage = "url(imgs/smiley_macro.png)";
     toBattleScreen.appendChild(leftLowerCorner);
     toBattleScreen.appendChild(rightUpperCorner);
     toBattleScreen.appendChild(leftUpperCorner);
