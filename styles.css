@@ -250,7 +250,7 @@ body{
     align-items: flex-end;
     justify-content: flex-end;
     grid-area: 1/2/1/2;
-    background-image: url(/imgs/pc.png);
+    background-image: url(imgs/pc.png);
     background-color: transparent;
     background-repeat: no-repeat;
     background-size: auto 95%;
@@ -361,7 +361,7 @@ body{
 
 .alienWinnerScreen{
     z-index: 5;
-    background-image: url(/imgs/alien_win.png);
+    background-image: url(imgs/alien_win.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -372,7 +372,7 @@ body{
 }
 .smileyWinnerScreen{
     z-index: 5;
-    background-image: url(/imgs/smiley_win.png);
+    background-image: url(imgs/smiley_win.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -383,7 +383,7 @@ body{
 }
 .boyWinnerScreen{
     z-index: 5;
-    background-image: url(/imgs/boy_win.png);
+    background-image: url(imgs/boy_win.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -394,7 +394,7 @@ body{
 }
 .illumWinnerScreen{
     z-index: 5;
-    background-image: url(/imgs/illum_win.png);
+    background-image: url(imgs/illum_win.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -405,7 +405,7 @@ body{
 }
 .pcWinnerScreen{
     z-index: 5;
-    background-image: url(/imgs/pc_won.png);
+    background-image: url(imgs/pc_won.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
