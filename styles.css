@@ -408,7 +408,7 @@ body{
     background-image: url(imgs/pc_won.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     width: 80%;
     height: 70%;
     position: absolute;
